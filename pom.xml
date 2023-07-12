@@ -67,7 +67,7 @@
 
 <profiles>
     <profile>
-        <id>Test</id>
+        <id>RegID</id>
         <build>
            <plugins>
                <plugin>

@@ -14,6 +14,8 @@ import com.hrm.pom.DashboardPage;
 
 import com.hrm.pom.LoginPage;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 public class BaseClass {
 
 	FileUtlity fLib = new FileUtlity();	
@@ -24,19 +26,24 @@ public class BaseClass {
 
 	@BeforeClass
 	public void Openbrowser() throws Throwable {
-		String ENV_FILE_PATH =    fLib.getFilePathFromPropertiesFile("projectConfigDataFilePath");
-		String BROWSER = fLib.getDataFromProperties(ENV_FILE_PATH, "browser");
+		//String ENV_FILE_PATH =    fLib.getFilePathFromPropertiesFile("projectConfigDataFilePath");
+		//String BROWSER = fLib.getDataFromProperties(ENV_FILE_PATH, "browser");
+		String BROWSER=System.getProperty("browser");
 		if(BROWSER.equalsIgnoreCase("Chrome")) {		
+			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
 		}else if(BROWSER.equalsIgnoreCase("Firefox")) {
+			WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();
 		}else if(BROWSER.equalsIgnoreCase("Edge")) {
+			WebDriverManager.edgedriver().setup();
 			driver = new EdgeDriver();
 		}else {
 			Reporter.log("Enter proper browser name", true);
 		}
 		driver.manage().window().maximize();
-		String URL = fLib.getDataFromProperties(ENV_FILE_PATH, "url");
+		//String URL = fLib.getDataFromProperties(ENV_FILE_PATH, "url");
+		String URL=System.getProperty("url");
 		driver.get(URL);
 		sdriver=driver;
 	}
