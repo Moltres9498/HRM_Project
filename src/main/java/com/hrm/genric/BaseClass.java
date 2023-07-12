@@ -30,13 +30,13 @@ public class BaseClass {
 		String BROWSER = fLib.getDataFromProperties(ENV_FILE_PATH, "browser");
 		//String BROWSER=System.getProperty("browser");
 		if(BROWSER.equalsIgnoreCase("Chrome")) {		
-			WebDriverManager.chromedriver().setup();
+		//	WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
 		}else if(BROWSER.equalsIgnoreCase("Firefox")) {
-			WebDriverManager.firefoxdriver().setup();
+			//WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();
 		}else if(BROWSER.equalsIgnoreCase("Edge")) {
-			WebDriverManager.edgedriver().setup();
+			//WebDriverManager.edgedriver().setup();
 			driver = new EdgeDriver();
 		}else {
 			Reporter.log("Enter proper browser name", true);
