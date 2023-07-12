@@ -42,6 +42,9 @@ public class AdminPage {
 
 	@FindBy(xpath = "//div[@class='col-sm-12 col-md-6']//input[@class='form-control form-control-sm']")
 	private WebElement searchtxtbx;
+	
+	@FindBy(xpath="//td[@class='sorting_1']")
+	private WebElement plusbtn;
 
 	@FindBy(xpath = "//tr[@class='odd']//td[contains(text(),'Gojo')]")
 	private WebElement verifyadd;
