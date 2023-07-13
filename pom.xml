@@ -66,7 +66,7 @@
 
 <profiles>
     <profile>
-        <id>RegID</id>
+        <id>>RegID</id>
         <build>
            <plugins>
                <plugin>
@@ -75,7 +75,7 @@
                    <version>3.1.2</version>
                    <configuration>
                        <suiteXmlFiles>
-                           <suiteXmlFile>Corporate.xml</suiteXmlFile>
+                           <suiteXmlFile>jenkintest.xml</suiteXmlFile>
     				   </suiteXmlFiles>
                    </configuration>
                </plugin>
