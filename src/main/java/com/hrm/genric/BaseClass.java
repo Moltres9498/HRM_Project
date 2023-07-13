@@ -23,9 +23,6 @@ public class BaseClass {
 	public static WebDriver sdriver;
 	
 	public WebDriver driver=null;
-	String BROWSER;
-	String URL;
-	String ENV_FILE_PATH;
 
 	@BeforeClass
 	public void Openbrowser() throws Throwable {
