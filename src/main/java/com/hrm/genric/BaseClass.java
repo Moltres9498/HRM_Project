@@ -23,31 +23,33 @@ public class BaseClass {
 	public static WebDriver sdriver;
 	
 	public WebDriver driver=null;
+	String BROWSER;
+	String URL;
+	String ENV_FILE_PATH;
 
 	@BeforeClass
 	public void Openbrowser() throws Throwable {
-		//WebDriverManager.chromedriver().setup();
-		//WebDriverManager.firefoxdriver().setup();
 		String ENV_FILE_PATH =    fLib.getFilePathFromPropertiesFile("projectConfigDataFilePath");
 		String BROWSER = fLib.getDataFromProperties(ENV_FILE_PATH, "browser");
 		//String BROWSER=System.getProperty("browser");
-		if(BROWSER.equalsIgnoreCase("Chrome")) {		
-		//	WebDriverManager.chromedriver().setup();
+		if(BROWSER.equals("Chrome")) {		
+		WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
-		}else if(BROWSER.equalsIgnoreCase("Firefox")) {
-			//WebDriverManager.firefoxdriver().setup();
+		}else if(BROWSER.equals("Firefox")) {
+			WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();
-		}else if(BROWSER.equalsIgnoreCase("Edge")) {
-			//WebDriverManager.edgedriver().setup();
+		}else if(BROWSER.equals("Edge")) {
+			WebDriverManager.edgedriver().setup();
 			driver = new EdgeDriver();
 		}else {
-			Reporter.log("Enter proper browser name", true);
+			WebDriverManager.chromedriver().setup();
+			driver = new ChromeDriver();
 		}
-		sdriver=driver;
 		driver.manage().window().maximize();
 		String URL = fLib.getDataFromProperties(ENV_FILE_PATH, "url");
 		//String URL=System.getProperty("url");
 		driver.get(URL);
+		sdriver=driver;
 	}
 	
 	@BeforeMethod
