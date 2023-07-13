@@ -32,15 +32,15 @@ public class BaseClass {
 		String ENV_FILE_PATH =    fLib.getFilePathFromPropertiesFile("projectConfigDataFilePath");
 		String URL = fLib.getDataFromProperties(ENV_FILE_PATH, "url");
 		String BROWSER = fLib.getDataFromProperties(ENV_FILE_PATH, "browser");
-		WebDriverManager.chromedriver().setup();
+		//WebDriverManager.chromedriver().setup();
 		if(BROWSER.equals("Chrome")) {		
-		WebDriverManager.chromedriver().setup();
+		//WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
 		}else if(BROWSER.equals("Firefox")) {
-			WebDriverManager.firefoxdriver().setup();
+			//WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();
 		}else if(BROWSER.equals("Edge")) {
-			WebDriverManager.edgedriver().setup();
+			//WebDriverManager.edgedriver().setup();
 			driver = new EdgeDriver();
 		}else {
 			WebDriverManager.chromedriver().setup();
