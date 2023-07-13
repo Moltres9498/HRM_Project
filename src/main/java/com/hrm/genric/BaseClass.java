@@ -26,11 +26,11 @@ public class BaseClass {
 
 	@BeforeClass
 	public void Openbrowser() throws Throwable {
-		WebDriverManager.chromedriver().setup();
-		WebDriverManager.firefoxdriver().setup();
+		//WebDriverManager.chromedriver().setup();
+		//WebDriverManager.firefoxdriver().setup();
 		String ENV_FILE_PATH =    fLib.getFilePathFromPropertiesFile("projectConfigDataFilePath");
-		//String BROWSER = fLib.getDataFromProperties(ENV_FILE_PATH, "browser");
-		String BROWSER=System.getProperty("browser");
+		String BROWSER = fLib.getDataFromProperties(ENV_FILE_PATH, "browser");
+		//String BROWSER=System.getProperty("browser");
 		if(BROWSER.equalsIgnoreCase("Chrome")) {		
 		//	WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
@@ -45,8 +45,8 @@ public class BaseClass {
 		}
 		sdriver=driver;
 		driver.manage().window().maximize();
-		//String URL = fLib.getDataFromProperties(ENV_FILE_PATH, "url");
-		String URL=System.getProperty("url");
+		String URL = fLib.getDataFromProperties(ENV_FILE_PATH, "url");
+		//String URL=System.getProperty("url");
 		driver.get(URL);
 	}
 	
