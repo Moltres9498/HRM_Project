@@ -1,57 +1,181 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="0" skipped="1">
   <reporter-output>
-    <line>
-      <![CDATA[Logged in Successfully]]>
-    </line>
-    <line>
-      <![CDATA[Testingis verified PASS]]>
-    </line>
-    <line>
-      <![CDATA[Developmentis verified PASS]]>
-    </line>
-    <line>
-      <![CDATA[Corporate deleted]]>
-    </line>
   </reporter-output>
-  <suite started-at="2023-07-12T17:04:19 IST" name="Suite" finished-at="2023-07-12T17:04:35 IST" duration-ms="15242">
+  <suite started-at="2023-07-13T11:03:24 IST" name="Default suite" finished-at="2023-07-13T11:04:11 IST" duration-ms="46861">
     <groups>
     </groups>
-    <test started-at="2023-07-12T17:04:19 IST" name="Test" finished-at="2023-07-12T17:04:35 IST" duration-ms="15242">
+    <test started-at="2023-07-13T11:03:24 IST" name="Default test" finished-at="2023-07-13T11:04:11 IST" duration-ms="46861">
       <class name="hrm.headtest.CorporateTest">
-        <test-method is-config="true" signature="Openbrowser()[pri:0, instance:hrm.headtest.CorporateTest@6572421]" started-at="2023-07-12T17:04:19 IST" name="Openbrowser" finished-at="2023-07-12T17:04:26 IST" duration-ms="6327" status="PASS">
+        <test-method is-config="true" signature="Openbrowser()[pri:0, instance:hrm.headtest.CorporateTest@6572421]" started-at="2023-07-13T11:03:24 IST" name="Openbrowser" finished-at="2023-07-13T11:04:11 IST" duration-ms="46758" status="FAIL">
+          <exception class="io.github.bonigarcia.wdm.config.WebDriverManagerException">
+            <message>
+              <![CDATA[java.net.UnknownHostException: api.github.com]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[io.github.bonigarcia.wdm.config.WebDriverManagerException: java.net.UnknownHostException: api.github.com
+at io.github.bonigarcia.wdm.WebDriverManager.handleException(WebDriverManager.java:1277)
+at io.github.bonigarcia.wdm.WebDriverManager.manage(WebDriverManager.java:1060)
+at io.github.bonigarcia.wdm.WebDriverManager.fallback(WebDriverManager.java:1293)
+at io.github.bonigarcia.wdm.WebDriverManager.handleException(WebDriverManager.java:1270)
+at io.github.bonigarcia.wdm.WebDriverManager.manage(WebDriverManager.java:1060)
+at io.github.bonigarcia.wdm.WebDriverManager.setup(WebDriverManager.java:393)
+at com.hrm.genric.BaseClass.Openbrowser(BaseClass.java:30)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
+at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
+at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
+at org.testng.internal.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:176)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:122)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: java.net.UnknownHostException: api.github.com
+at java.base/java.net.InetAddress$CachedAddresses.get(InetAddress.java:948)
+at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1638)
+at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1504)
+at org.apache.hc.client5.http.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:43)
+at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:118)
+at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:409)
+at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:164)
+at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:174)
+at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:135)
+at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+at org.apache.hc.client5.http.impl.classic.ExecChainElement$1.proceed(ExecChainElement.java:57)
+at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:172)
+at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+at org.apache.hc.client5.http.impl.classic.ExecChainElement$1.proceed(ExecChainElement.java:57)
+at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:93)
+at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+at org.apache.hc.client5.http.impl.classic.ExecChainElement$1.proceed(ExecChainElement.java:57)
+at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:128)
+at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+at org.apache.hc.client5.http.impl.classic.ExecChainElement$1.proceed(ExecChainElement.java:57)
+at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:116)
+at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:178)
+at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:75)
+at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:89)
+at io.github.bonigarcia.wdm.online.HttpClient.execute(HttpClient.java:158)
+at io.github.bonigarcia.wdm.WebDriverManager.openGitHubConnection(WebDriverManager.java:1447)
+at io.github.bonigarcia.wdm.WebDriverManager.getDriversFromGitHub(WebDriverManager.java:1461)
+at io.github.bonigarcia.wdm.managers.FirefoxDriverManager.getDriverUrls(FirefoxDriverManager.java:102)
+at io.github.bonigarcia.wdm.WebDriverManager.createUrlHandler(WebDriverManager.java:1298)
+at io.github.bonigarcia.wdm.WebDriverManager.download(WebDriverManager.java:1136)
+at io.github.bonigarcia.wdm.WebDriverManager.manage(WebDriverManager.java:1054)
+... 29 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- io.github.bonigarcia.wdm.config.WebDriverManagerException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Openbrowser -->
-        <test-method is-config="true" signature="login()[pri:0, instance:hrm.headtest.CorporateTest@6572421]" started-at="2023-07-12T17:04:26 IST" name="login" finished-at="2023-07-12T17:04:27 IST" duration-ms="1191" status="PASS">
+        <test-method is-config="true" signature="login()[pri:0, instance:hrm.headtest.CorporateTest@6572421]" started-at="2023-07-13T11:04:11 IST" name="login" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1689226451742" status="SKIP">
           <reporter-output>
-            <line>
-              <![CDATA[Logged in Successfully]]>
-            </line>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method signature="Corporate()[pri:0, instance:hrm.headtest.CorporateTest@6572421]" started-at="2023-07-12T17:04:27 IST" name="Corporate" finished-at="2023-07-12T17:04:34 IST" duration-ms="7103" status="PASS">
+        <test-method signature="Corporate()[pri:0, instance:hrm.headtest.CorporateTest@6572421]" started-at="2023-07-13T11:04:11 IST" name="Corporate" finished-at="2023-07-13T11:04:11 IST" duration-ms="0" status="SKIP">
+          <exception class="io.github.bonigarcia.wdm.config.WebDriverManagerException">
+            <message>
+              <![CDATA[java.net.UnknownHostException: api.github.com]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[io.github.bonigarcia.wdm.config.WebDriverManagerException: java.net.UnknownHostException: api.github.com
+at io.github.bonigarcia.wdm.WebDriverManager.handleException(WebDriverManager.java:1277)
+at io.github.bonigarcia.wdm.WebDriverManager.manage(WebDriverManager.java:1060)
+at io.github.bonigarcia.wdm.WebDriverManager.fallback(WebDriverManager.java:1293)
+at io.github.bonigarcia.wdm.WebDriverManager.handleException(WebDriverManager.java:1270)
+at io.github.bonigarcia.wdm.WebDriverManager.manage(WebDriverManager.java:1060)
+at io.github.bonigarcia.wdm.WebDriverManager.setup(WebDriverManager.java:393)
+at com.hrm.genric.BaseClass.Openbrowser(BaseClass.java:30)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
+at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
+at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
+at org.testng.internal.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:176)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:122)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: java.net.UnknownHostException: api.github.com
+at java.base/java.net.InetAddress$CachedAddresses.get(InetAddress.java:948)
+at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1638)
+at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1504)
+at org.apache.hc.client5.http.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:43)
+at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:118)
+at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:409)
+at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:164)
+at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:174)
+at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:135)
+at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+at org.apache.hc.client5.http.impl.classic.ExecChainElement$1.proceed(ExecChainElement.java:57)
+at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:172)
+at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+at org.apache.hc.client5.http.impl.classic.ExecChainElement$1.proceed(ExecChainElement.java:57)
+at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:93)
+at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+at org.apache.hc.client5.http.impl.classic.ExecChainElement$1.proceed(ExecChainElement.java:57)
+at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:128)
+at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+at org.apache.hc.client5.http.impl.classic.ExecChainElement$1.proceed(ExecChainElement.java:57)
+at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:116)
+at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:178)
+at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:75)
+at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:89)
+at io.github.bonigarcia.wdm.online.HttpClient.execute(HttpClient.java:158)
+at io.github.bonigarcia.wdm.WebDriverManager.openGitHubConnection(WebDriverManager.java:1447)
+at io.github.bonigarcia.wdm.WebDriverManager.getDriversFromGitHub(WebDriverManager.java:1461)
+at io.github.bonigarcia.wdm.managers.FirefoxDriverManager.getDriverUrls(FirefoxDriverManager.java:102)
+at io.github.bonigarcia.wdm.WebDriverManager.createUrlHandler(WebDriverManager.java:1298)
+at io.github.bonigarcia.wdm.WebDriverManager.download(WebDriverManager.java:1136)
+at io.github.bonigarcia.wdm.WebDriverManager.manage(WebDriverManager.java:1054)
+... 29 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- io.github.bonigarcia.wdm.config.WebDriverManagerException -->
           <reporter-output>
-            <line>
-              <![CDATA[Testingis verified PASS]]>
-            </line>
-            <line>
-              <![CDATA[Developmentis verified PASS]]>
-            </line>
-            <line>
-              <![CDATA[Corporate deleted]]>
-            </line>
           </reporter-output>
         </test-method> <!-- Corporate -->
-        <test-method is-config="true" signature="logout()[pri:0, instance:hrm.headtest.CorporateTest@6572421]" started-at="2023-07-12T17:04:34 IST" name="logout" finished-at="2023-07-12T17:04:34 IST" duration-ms="295" status="PASS">
+        <test-method is-config="true" signature="logout()[pri:0, instance:hrm.headtest.CorporateTest@6572421]" started-at="2023-07-13T11:04:11 IST" name="logout" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1689226451755" status="SKIP">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- logout -->
-        <test-method is-config="true" signature="Closebrowser()[pri:0, instance:hrm.headtest.CorporateTest@6572421]" started-at="2023-07-12T17:04:34 IST" name="Closebrowser" finished-at="2023-07-12T17:04:35 IST" duration-ms="245" status="PASS">
+        <test-method is-config="true" signature="Closebrowser()[pri:0, instance:hrm.headtest.CorporateTest@6572421]" started-at="2023-07-13T11:04:11 IST" name="Closebrowser" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1689226451760" status="SKIP">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Closebrowser -->
       </class> <!-- hrm.headtest.CorporateTest -->
-    </test> <!-- Test -->
-  </suite> <!-- Suite -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>
