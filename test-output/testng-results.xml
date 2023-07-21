@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-07-21T10:09:36 IST" name="Default suite" finished-at="2023-07-21T10:09:36 IST" duration-ms="93">
+  <suite started-at="2023-07-21T17:14:53 IST" name="Default suite" finished-at="2023-07-21T17:14:53 IST" duration-ms="83">
     <groups>
     </groups>
-    <test started-at="2023-07-21T10:09:36 IST" name="Default test" finished-at="2023-07-21T10:09:36 IST" duration-ms="93">
-      <class name="JavaPrograms.AscendingOrderUsingBubbleSort">
-        <test-method signature="ToSortArrayInaAscendingOrderUsingBubbleSort()[pri:0, instance:JavaPrograms.AscendingOrderUsingBubbleSort@52e6fdee]" started-at="2023-07-21T10:09:36 IST" name="ToSortArrayInaAscendingOrderUsingBubbleSort" finished-at="2023-07-21T10:09:36 IST" duration-ms="20" status="PASS">
+    <test started-at="2023-07-21T17:14:53 IST" name="Default test" finished-at="2023-07-21T17:14:53 IST" duration-ms="83">
+      <class name="PatternPrograms.Pattern16">
+        <test-method signature="main()[pri:0, instance:PatternPrograms.Pattern16@52e6fdee]" started-at="2023-07-21T17:14:53 IST" name="main" finished-at="2023-07-21T17:14:53 IST" duration-ms="16" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ToSortArrayInaAscendingOrderUsingBubbleSort -->
-      </class> <!-- JavaPrograms.AscendingOrderUsingBubbleSort -->
+        </test-method> <!-- main -->
+      </class> <!-- PatternPrograms.Pattern16 -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
