@@ -1,12 +1,17 @@
 package com.hrm.genric;
 
+import java.io.File;
 import java.time.Duration;
+import java.time.LocalDateTime;
 import java.util.Iterator;
 import java.util.Set;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -22,11 +27,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class WebActionUtility {
 	FileUtlity fLib = new FileUtlity();
 	int TIMEOUT;
-	
+
 	public WebActionUtility() throws Throwable {
 		String filepath = fLib.getFilePathFromPropertiesFile("projectConfigDataFilePath");
 		String STIMEOUT = fLib.getDataFromProperties(filepath, "TimeOut");
-		 TIMEOUT = Integer.parseInt(STIMEOUT);
+		TIMEOUT = Integer.parseInt(STIMEOUT);
 	}
 
 	/**
@@ -38,7 +43,7 @@ public class WebActionUtility {
 
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(TIMEOUT));
 	}
-	
+
 	/**
 	 *   it's an Explicitly wait Always wait for Page to be loaded & available in GUI
 	 * @param driver
@@ -46,11 +51,11 @@ public class WebActionUtility {
 	 * @throws Throwable 
 	 */
 	public void waitForPage(WebDriver driver , String partailPageURL) throws Throwable {
-	
+
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(TIMEOUT));
 		wait.until(ExpectedConditions.urlContains(partailPageURL));
 	}
-	
+
 	/**
 	 *   it's an Explicitly wait Always wait for Page to be loaded & available in GUI
 	 * @param driver
@@ -58,68 +63,68 @@ public class WebActionUtility {
 	 * @throws Throwable 
 	 */
 	public void waitForElement(WebDriver driver , WebElement element) throws Throwable {
-	
+
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(TIMEOUT));
 		wait.until(ExpectedConditions.visibilityOf(element));
 	}
-	
+
 	/**
 	 * 
 	 * @param element
 	 * @throws Throwable 
 	 */
-	   public void waitAndClick(WebElement element) throws Throwable
-	   {
+	public void waitAndClick(WebElement element) throws Throwable
+	{
 
-		   int count = 0;
-	       while(count<TIMEOUT) {
-		    	   try {
-		    	       element.click();
-		    	       break;
-		    	   }catch(Throwable e){
-		    		   Thread.sleep(1000);
-		    		   count++;
-		    	   }
-	       }
-	   }
-	   /**
-	    * wait for the element and type the data
-	    * @param element
-	    * @param data
-	    * @throws InterruptedException
-	    */
-	   public void waitAndType(WebElement element, String data) throws InterruptedException
-	   {
-		   int count = 0;
-	       while(count<20) {
-		    	   try {
-		    	       element.sendKeys(data);
-		    	       break;
-		    	   }catch(Throwable e){
-		    		   Thread.sleep(1000);
-		    		   count++;
-		    	   }
-	       }
-	   }
-	
+		int count = 0;
+		while(count<TIMEOUT) {
+			try {
+				element.click();
+				break;
+			}catch(Throwable e){
+				Thread.sleep(1000);
+				count++;
+			}
+		}
+	}
+	/**
+	 * wait for the element and type the data
+	 * @param element
+	 * @param data
+	 * @throws InterruptedException
+	 */
+	public void waitAndType(WebElement element, String data) throws InterruptedException
+	{
+		int count = 0;
+		while(count<20) {
+			try {
+				element.sendKeys(data);
+				break;
+			}catch(Throwable e){
+				Thread.sleep(1000);
+				count++;
+			}
+		}
+	}
+
 	/**
 	 *  used to Switch to Any Window based on Window Title
 	 * @param driver
 	 * @param partialWindowTitle
 	 */
 	public void swithToWindow(WebDriver driver , String partialWindowTitle) {
-	       Set<String> set = driver.getWindowHandles();
-	         Iterator<String> it = set.iterator();
+		Set<String> set = driver.getWindowHandles();
+		Iterator<String> it = set.iterator();
 
-	          while (it.hasNext()) {
-			          String wID = it.next();
-			          driver.switchTo().window(wID);
-			          String currentWindowTitle = driver.getTitle();
-			          if(currentWindowTitle.contains(partialWindowTitle)) {
-			        	  System.out.println(partialWindowTitle + "Switch to Window is passed--!");
-			        	  break;
-			          }
-		    	}
+		while (it.hasNext()) {
+			String wID = it.next();
+			driver.switchTo().window(wID);
+			String currentWindowTitle = driver.getTitle();
+			if(currentWindowTitle.contains(partialWindowTitle)) {
+				System.out.println(partialWindowTitle + "Switch to Window is passed--!");
+				break;
+			}
+		}
 	}
 	/**
 	 *  used to Switch to Any Window based on Window URL
@@ -127,18 +132,18 @@ public class WebActionUtility {
 	 * @param partialWindowTitle
 	 */
 	public void swithToWindowBasedOnURL(WebDriver driver , String partialWindowURL) {
-	       Set<String> set = driver.getWindowHandles();
-	         Iterator<String> it = set.iterator();
+		Set<String> set = driver.getWindowHandles();
+		Iterator<String> it = set.iterator();
 
-	          while (it.hasNext()) {
-			          String wID = it.next();
-			          driver.switchTo().window(wID);
-			          String currentWindowTitle = driver.getCurrentUrl();
-			          if(currentWindowTitle.contains(partialWindowURL)) {
-			        	  System.out.println(partialWindowURL + "Switch to Window is passed--!");
-			        	  break;
-			          }
-		    	}
+		while (it.hasNext()) {
+			String wID = it.next();
+			driver.switchTo().window(wID);
+			String currentWindowTitle = driver.getCurrentUrl();
+			if(currentWindowTitle.contains(partialWindowURL)) {
+				System.out.println(partialWindowURL + "Switch to Window is passed--!");
+				break;
+			}
+		}
 	}
 	/**
 	 * used to Switch to Alert Window & click on OK button
@@ -146,27 +151,27 @@ public class WebActionUtility {
 	 */
 	public void swithToAlertWindowAndAccpect(WebDriver driver ,String expectedMsg) {
 		Alert alt = driver.switchTo().alert();
-		 if(alt.getText().trim().equalsIgnoreCase(expectedMsg.trim())) {
-			 System.out.println("Alert Message is verified");
-		 }else {
-			 System.out.println("Alert Message is not verified");
-		 }
+		if(alt.getText().trim().equalsIgnoreCase(expectedMsg.trim())) {
+			System.out.println("Alert Message is verified");
+		}else {
+			System.out.println("Alert Message is not verified");
+		}
 		alt.accept();
 	}
-	
-	
+
+
 	/**
 	 * used to Switch to Alert Window & click on Cancel button
 	 * @param driver
 	 */
 	public void swithToAlertWindowAndCancel(WebDriver driver, String expectedMsg) {
 		Alert alt = driver.switchTo().alert();
-		 if(alt.getText().equals(expectedMsg)) {
-			 System.out.println("Alert Message is verified");
-		 }else {
-			 System.out.println("Alert Message is not verified");
-		 }
-		 alt.dismiss();
+		if(alt.getText().equals(expectedMsg)) {
+			System.out.println("Alert Message is verified");
+		}else {
+			System.out.println("Alert Message is not verified");
+		}
+		alt.dismiss();
 	}
 	/**
 	 * used to Switch to Frame Window based on index
@@ -176,7 +181,7 @@ public class WebActionUtility {
 	public void swithToFrame(WebDriver driver , int index) {
 		driver.switchTo().frame(index);
 	}
-	
+
 	/**
 	 * used to Switch to Frame Window based on id or name attribute
 	 * @param driver
@@ -185,7 +190,7 @@ public class WebActionUtility {
 	public void swithToFrame(WebDriver driver , String id_name_attribute) {
 		driver.switchTo().frame(id_name_attribute);
 	}
-	
+
 	/**
 	 * used to select the value from the dropDwon  based on index
 	 * @param driver
@@ -214,20 +219,20 @@ public class WebActionUtility {
 		Actions act = new Actions(driver);
 		act.moveToElement(elemnet).perform();
 	}
-	
+
 	/**
 	 * 	 used to right click  on specified element
 
 	 * @param driver
 	 * @param elemnet
 	 */
-	
+
 	public void rightClickOnElement(WebDriver driver , WebElement elemnet)
 	{
 		Actions act = new Actions(driver);
 		act.contextClick(elemnet).perform();
 	}
-	
+
 	/**
 	 * 
 	 * @param driver
@@ -238,20 +243,36 @@ public class WebActionUtility {
 		js.executeAsyncScript(javaScript, null);
 	}
 
-	   
-
-	    
-	    /**
-	     * pass enter Key appertain in to Browser
-	     * @param driver
-	     */
-	   public void passEnterKey(WebDriver driver) {
-		   Actions act = new Actions(driver);
-		   act.sendKeys(Keys.ENTER).perform();
-	   } 
 
 
+
+	/**
+	 * pass enter Key appertain in to Browser
+	 * @param driver
+	 */
+	public void passEnterKey(WebDriver driver) {
+		Actions act = new Actions(driver);
+		act.sendKeys(Keys.ENTER).perform();
+	} 
 
 	
-
+	/**
+	 * used to takescreenshot on testscript failure
+	 * @param driver
+	 * @param screenshotname
+	 */
+	public String takescreenshot(WebDriver driver, String screenshotname) {
+		TakesScreenshot ts=(TakesScreenshot) BaseClass.sdriver;
+		File src = ts.getScreenshotAs(OutputType.FILE);
+		LocalDateTime dt = LocalDateTime.now();
+		String datetime = dt.toString().replace(" ", "_").replace(":", "_");
+		File dst = new File("./screenshots/"+screenshotname+"_"+datetime+".png");
+		try {
+			FileUtils.copyFile(src, dst);
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+		return dst.getAbsolutePath();		   
+	}
 }
