@@ -99,13 +99,6 @@ public class DataBaseUtility {
 		}else {
 			System.out.println(expectedData+"==>data is not verified in the database");
 			return flag;
-		}
-         
+		}    
 	}
-
-
-
-
-
-
 }

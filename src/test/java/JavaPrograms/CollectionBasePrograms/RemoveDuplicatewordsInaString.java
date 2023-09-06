@@ -14,8 +14,7 @@ public class RemoveDuplicatewordsInaString {
 		}
 		for(String w:set)
 		{
-			String res=w+" ";
-			System.out.print(res);
+			System.out.print(w+" ");
 		}	
 	}
 }

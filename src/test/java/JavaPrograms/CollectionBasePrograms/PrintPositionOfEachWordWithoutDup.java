@@ -8,9 +8,9 @@ public class PrintPositionOfEachWordWithoutDup {
 		String str="I am a am a sdet engineer";
 		String[] s=str.split(" ");
 		LinkedHashSet<String> set=new LinkedHashSet<String>();
-		for(int i=0;i<s.length;i++)
+		for(String w:s)
 		{
-			set.add(s[i]);
+			set.add(w);
 		}
 		for(String ch:set)
 		{

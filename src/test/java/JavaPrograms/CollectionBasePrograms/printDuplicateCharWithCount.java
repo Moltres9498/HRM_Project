@@ -5,7 +5,7 @@ import java.util.LinkedHashSet;
 public class printDuplicateCharWithCount {
 
 	public static void main(String[] args) {
-		String s="Kannada";
+		String s="aabbcettrrraaee";
 		LinkedHashSet<Character> set=new LinkedHashSet<Character>();
 		for(int i=0;i<s.length();i++)
 		{
@@ -14,16 +14,16 @@ public class printDuplicateCharWithCount {
 		for(Character ch:set)
 		{
 			int count=0;
-			for(int i=0;i<s.length();i++)
+			for(int j=0;j<s.length();j++)
 			{
-				if(ch==s.charAt(i))
+				if(ch==s.charAt(j))
 				{
 					count++;
 				}
 			}
 			if(count>=1)
 			{
-				System.out.println(ch+" "+count);
+				System.out.print(ch+""+count);
 			}
 		}
 	}

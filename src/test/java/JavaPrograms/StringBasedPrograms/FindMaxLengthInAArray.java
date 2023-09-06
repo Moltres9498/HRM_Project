@@ -4,12 +4,13 @@ public class FindMaxLengthInAArray {
 
 	public static void main(String[] args) {
 		String[] s= {"ab","abc","bd","abcd","abcde","aabbc"};
-		String min_length=s[4];
-		for(int i=0;i<s.length;i++)
+		String max_length=s[4];
+		//for(int i=0;i<s.length;i++)
+		 for(String w:s)
 		{
-			if(s[i].length()>=min_length.length())
+			if(w.length()>=max_length.length())
 			{
-				System.out.println(s[i]);
+				System.out.println(w);
 			}
 		}
 	}

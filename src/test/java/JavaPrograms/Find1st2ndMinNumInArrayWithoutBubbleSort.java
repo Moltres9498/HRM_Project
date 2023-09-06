@@ -22,5 +22,6 @@ public class Find1st2ndMinNumInArrayWithoutBubbleSort {
 			}
 		}
 		System.out.println(fmin+" "+Smin);
+		//System.out.println(fmin);
 	}
 }

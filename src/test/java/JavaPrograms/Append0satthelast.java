@@ -3,6 +3,8 @@ package JavaPrograms;
 public class Append0satthelast {
 
 	public static void main(String[] args) {
+		
+		
 		int []a= {0,4,0,6,0,1};
 		int []b=new int[a.length];
 		int m=0;

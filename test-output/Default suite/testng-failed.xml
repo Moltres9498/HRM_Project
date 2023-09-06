@@ -3,15 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="hrm.headtest.CorporateTest">
+      <class name="practice.Cosmocode">
         <methods>
-          <include name="login"/>
-          <include name="Openbrowser"/>
-          <include name="Closebrowser"/>
-          <include name="Corporate"/>
-          <include name="logout"/>
+          <include name="cosmo"/>
         </methods>
-      </class> <!-- hrm.headtest.CorporateTest -->
+      </class> <!-- practice.Cosmocode -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

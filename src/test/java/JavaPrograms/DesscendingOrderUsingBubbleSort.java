@@ -18,7 +18,7 @@ public class DesscendingOrderUsingBubbleSort {
 					a[j]=temp;
 				}
 			}
-			System.out.println(a[i]+" ");
+			System.out.print(a[i]+" ");
 		}
 	}
 }

@@ -20,5 +20,11 @@ public class AscendingOrderUsingBubbleSort {
 			}
 			System.out.print(a[i]+" ");
 		}
+	int mul=1;
+	for(int k=0;k<3;k++)
+	{
+		mul=mul*a[k];
+	}
+	System.out.println("             Mul of 1st 3 Min numbers is-->"+mul);
 	}
 }

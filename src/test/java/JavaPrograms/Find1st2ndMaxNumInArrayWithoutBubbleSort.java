@@ -3,7 +3,7 @@ package JavaPrograms;
 public class Find1st2ndMaxNumInArrayWithoutBubbleSort {
 
 	public static void main(String[] args) {
-		int [] a= {9,7,6,2,4,1};
+		int [] a= {0,0,6,2,4,1};
 		int fmin=a[0];
 		int Smin=a[0];
 		for(int i=0;i<a.length;i++)

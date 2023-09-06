@@ -3,6 +3,14 @@
 <suite name="Suite">
   <test thread-count="5" name="Test">
     <classes>
+      <class name="PatternPrograms.Pattern17"/>
+      <class name="PatternPrograms.Pattern16"/>
+      <class name="PatternPrograms.Pattern11"/>
+      <class name="PatternPrograms.Pattern10"/>
+      <class name="PatternPrograms.Pattern15"/>
+      <class name="PatternPrograms.Pattern14"/>
+      <class name="PatternPrograms.Pattern13"/>
+      <class name="PatternPrograms.Pattern12"/>
       <class name="PatternPrograms.Pattern1"/>
       <class name="PatternPrograms.Pattern2"/>
       <class name="PatternPrograms.Pattern3"/>
@@ -10,6 +18,8 @@
       <class name="PatternPrograms.Pattern5"/>
       <class name="PatternPrograms.Pattern6"/>
       <class name="PatternPrograms.Pattern7"/>
+      <class name="PatternPrograms.Pattern8"/>
+      <class name="PatternPrograms.Pattern9"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
