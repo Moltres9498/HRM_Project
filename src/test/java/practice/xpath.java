@@ -34,5 +34,6 @@ public class xpath {
 		Thread.sleep(2000);
 		
 		driver.close();
+		//thank you
 	}
 }
