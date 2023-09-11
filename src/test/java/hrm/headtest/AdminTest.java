@@ -65,5 +65,8 @@ public class AdminTest extends BaseClass {
 		
 		/*step 10 : verify deleted Admin*/
 		am.VerifyDeletedAdmin(FN2);
+		
+		
+		// This is admin test
 	}       
 }
